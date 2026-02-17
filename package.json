@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "text": "echo 'Hello from package.json'"
+    "test": "echo 'Hello from package.json'"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
