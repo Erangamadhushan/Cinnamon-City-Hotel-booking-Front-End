@@ -56,6 +56,26 @@ export const api = {
       localStorage.removeItem("ch_token");
     }
   },
+
+  // Hotels
+  listHotels: (params) => {
+    const qs = new URLSearchParams(params || {}).toString();
+    return httpRequest(`/hotels${qs ? `?${qs}` : ""}`);
+  },
+  getHotel: (id) => httpRequest(`/hotels/${id}`),
+  rateHotel: (id, value, bookingId) =>
+    httpRequest(`/hotels/${id}/rating`, {
+      method: "POST",
+      body: { value, bookingId },
+    }),
+  createHotel: (body) => httpRequest("/hotels", { method: "POST", body }),
+  updateHotel: (id, body) => httpRequest(`/hotels/${id}`, { method: "PATCH", body }),
+  deleteHotel: (id) => httpRequest(`/hotels/${id}`, { method: "DELETE" }),
+  removeHotelImage: (id, imagePath) =>
+    httpRequest(`/hotels/${id}/images`, {
+      method: "DELETE",
+      body: { path: imagePath },
+    }),
 };
 
 export function fileUrl(path) {
