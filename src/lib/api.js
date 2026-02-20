@@ -88,6 +88,12 @@ export const api = {
   updateRoom: (id, body) =>
     httpRequest(`/rooms/${id}`, { method: "PATCH", body }),
   deleteRoom: (id) => httpRequest(`/rooms/${id}`, { method: "DELETE" }),
+
+  // Bookings
+  createBooking: (body) => httpRequest("/bookings", { method: "POST", body }),
+  myBookings: () => httpRequest("/bookings/me"),
+  cancelBooking: (id) =>
+    httpRequest(`/bookings/${id}/cancel`, { method: "POST" }),
 };
 
 export function fileUrl(path) {
