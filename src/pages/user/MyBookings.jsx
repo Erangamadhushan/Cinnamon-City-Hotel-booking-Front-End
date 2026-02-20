@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { api, fileUrl } from "../lib/api";
+import { api, fileUrl } from "../../lib/api";
 import toast from "react-hot-toast";
 
 const MyBookings = () => {

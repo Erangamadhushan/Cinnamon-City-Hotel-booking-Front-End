@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { api, fileUrl } from "../lib/api";
-import { useAuth } from "../lib/auth";
-import BookingForm from "../components/BookingForm";
+import { useAuth } from "../hooks/useAuth";
+import BookingForm from "../components/forms/BookingForm";
 
 const HotelDetails = () => {
   const { id } = useParams();

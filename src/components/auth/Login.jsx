@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { api } from "../../lib/api";
-import { useAuth } from "../../lib/auth";
+import { useAuth } from "../../hooks/useAuth";
 
 const Login = ({ onSwitchToSignUp, requiredRole }) => {
   const [email, setEmail] = useState("");

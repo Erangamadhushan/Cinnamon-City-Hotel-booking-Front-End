@@ -1,7 +1,7 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import { useAuth } from '../../lib/auth'
-import AdminSidebar from '../../components/AdminSidebar'
+import { useAuth } from '../../hooks/useAuth'
+import AdminSidebar from '../../components/admin/AdminSidebar'
 
 export default function AdminLayout() {
   const { user, logout } = useAuth()
