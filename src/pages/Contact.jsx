@@ -56,7 +56,7 @@ const Contact = () => {
             </span>
           </p>
           <p className="text-gray-500 dark:text-gray-400">
-            We typically respond within 1–2 business days.
+            We typically respond within 1-2 business days.
           </p>
         </div>
       </div>
