@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 const IconBed = ({ size = 18, className = "" }) => (
