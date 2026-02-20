@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { api } from "../lib/api";
-import HotelCard from "../components/HotelCard";
+import HotelCard from "../components/cards/HotelCard";
 
 const HotelsList = () => {
   const [params, setParams] = useSearchParams();

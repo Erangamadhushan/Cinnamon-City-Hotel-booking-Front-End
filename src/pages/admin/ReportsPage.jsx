@@ -1,5 +1,5 @@
 import React from 'react'
-import ReportChart from '../../components/ReportChart'
+import ReportChart from '../../components/charts/ReportChart'
 
 export default function ReportsPage() {
   return (
