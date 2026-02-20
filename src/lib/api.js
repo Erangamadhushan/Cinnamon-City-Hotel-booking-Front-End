@@ -69,13 +69,25 @@ export const api = {
       body: { value, bookingId },
     }),
   createHotel: (body) => httpRequest("/hotels", { method: "POST", body }),
-  updateHotel: (id, body) => httpRequest(`/hotels/${id}`, { method: "PATCH", body }),
+  updateHotel: (id, body) =>
+    httpRequest(`/hotels/${id}`, { method: "PATCH", body }),
   deleteHotel: (id) => httpRequest(`/hotels/${id}`, { method: "DELETE" }),
   removeHotelImage: (id, imagePath) =>
     httpRequest(`/hotels/${id}/images`, {
       method: "DELETE",
       body: { path: imagePath },
     }),
+
+  // Rooms
+  listRooms: (params) => {
+    const qs = new URLSearchParams(params || {}).toString();
+    return httpRequest(`/rooms${qs ? `?${qs}` : ""}`);
+  },
+  getRoom: (id) => httpRequest(`/rooms/${id}`),
+  createRoom: (body) => httpRequest("/rooms", { method: "POST", body }),
+  updateRoom: (id, body) =>
+    httpRequest(`/rooms/${id}`, { method: "PATCH", body }),
+  deleteRoom: (id) => httpRequest(`/rooms/${id}`, { method: "DELETE" }),
 };
 
 export function fileUrl(path) {
