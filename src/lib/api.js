@@ -94,6 +94,16 @@ export const api = {
   myBookings: () => httpRequest("/bookings/me"),
   cancelBooking: (id) =>
     httpRequest(`/bookings/${id}/cancel`, { method: "POST" }),
+
+  // Admin: bookings
+  adminListBookings: () => httpRequest("/bookings"),
+  adminUpdateBooking: (id, status) =>
+    httpRequest(`/bookings/${id}`, { method: "PUT", body: { status } }),
+  adminDeleteBooking: (id) =>
+    httpRequest(`/bookings/${id}`, { method: "DELETE" }),
+
+  // Admin: reports
+  reportsSummary: () => httpRequest("/reports/summary"),
 };
 
 export function fileUrl(path) {
