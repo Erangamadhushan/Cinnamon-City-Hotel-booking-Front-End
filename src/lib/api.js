@@ -1,4 +1,3 @@
-//import axios from "axios";
 const BASE_URL = import.meta.env.VITE_DEV
   ? "http://localhost:4000/api"
   : "https://cinnamon-city-hotel-booking.onrender.com/api";
