@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Facebook, Twitter, Instagram } from "lucide-react";
 
 import { useAuth } from "../../hooks/useAuth";
 import toast from "react-hot-toast";
@@ -120,7 +121,18 @@ export default function Navbar() {
               </Link>
             ))}
           </nav>
-
+          <div className="flex items-center gap-4">
+            { /* social media links  */}
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">
+              <Facebook />
+            </a>
+            <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">
+              <Twitter />
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">
+              <Instagram />
+            </a>
+          </div>
           <div className="flex items-center gap-2">
             <a
               href="tel:+10000000000"

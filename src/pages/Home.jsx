@@ -87,7 +87,7 @@ const Home = () => {
 
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
             <h1 className="text-5xl md:text-6xl font-serif italic">
-              Alpine Loft
+              Cinnamon City Hotel Booking
             </h1>
             <p className="mt-4 text-zinc-300">
               4 guests · 2 bedrooms · Panoramic views
