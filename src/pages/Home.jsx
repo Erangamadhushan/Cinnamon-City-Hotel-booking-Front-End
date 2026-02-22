@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { api } from "../lib/api";
 import HotelCard from "../components/cards/HotelCard";
+import { BENEFITS } from "../data/benefit.data";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ const Home = () => {
   const [error, setError] = useState("");
   // Hero image rotation (use images different from auth pages)
   const HERO_IMAGES = [
-    "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1600&auto=format&fit=crop", // city view (hotel skyline)
+    "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1600&auto=format&fit=crop",
   ];
   const [heroIdx, setHeroIdx] = useState(0);
 
@@ -74,12 +75,115 @@ const Home = () => {
 
   return (
     <section className="space-y-12">
-      <div className="rounded-xl border border-gray-200 bg-white shadow-sm dark:bg-gray-900 dark:border-gray-800">
+      <div className="bg-zinc-900 text-white min-h-screen">
+
+        {/* HERO SECTION */}
+        <section className="relative">
+          <img
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+            alt="hero"
+            className="w-full h-[500px] object-cover brightness-75"
+          />
+
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+            <h1 className="text-5xl md:text-6xl font-serif italic">
+              Alpine Loft
+            </h1>
+            <p className="mt-4 text-zinc-300">
+              4 guests · 2 bedrooms · Panoramic views
+            </p>
+
+            <div className="flex gap-6 mt-6 text-sm tracking-wide">
+              <button className="hover:text-gray-300">♡ Save</button>
+              <button className="hover:text-gray-300">↗ Share</button>
+            </div>
+          </div>
+        </section>
+
+        {/* INFO BAR */}
+        <section className="border-t border-zinc-700 py-6">
+          <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between text-sm text-zinc-400 px-6">
+            <span>Check in 3:00 PM</span>
+            <span>Check out 11:00 AM</span>
+            <span>Max guests 12</span>
+          </div>
+        </section>
+
+        {/* ABOUT SECTION */}
+        <section className="py-20 px-6 text-center max-w-3xl mx-auto">
+          <h2 className="text-4xl font-serif mb-6">Peak Serenity</h2>
+          <p className="text-zinc-400 leading-relaxed">
+            A sanctuary above the clouds. Alpine Loft redefines mountain luxury.
+            Wrapped in panoramic vistas, this exclusive retreat blends
+            contemporary design with alpine charm.
+          </p>
+
+          <button className="mt-6 text-sm tracking-widest border-b border-zinc-500 hover:border-white">
+            FULL DESCRIPTION
+          </button>
+        </section>
+
+        {/* SLEEPING ARRANGEMENTS */}
+        <section className="py-16 px-6 max-w-6xl mx-auto">
+          <h3 className="text-xl tracking-widest mb-10 text-zinc-400">
+            SLEEPING ARRANGEMENTS
+          </h3>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="border border-zinc-700 p-6">
+              <h4 className="text-lg mb-2">Bedroom Area</h4>
+              <p className="text-zinc-400 text-sm">
+                King-size bed · Designer lounge sofa
+              </p>
+            </div>
+
+            <div className="border border-zinc-700 p-6">
+              <h4 className="text-lg mb-2">Bathroom</h4>
+              <p className="text-zinc-400 text-sm">
+                Spa-inspired en-suite · Rain shower
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* FACILITIES & IMAGE SECTION */}
+        <section className="py-20 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+
+          {/* Facilities List */}
+          <div>
+            <h3 className="text-xl tracking-widest mb-8 text-zinc-400">
+              FACILITIES & SERVICES
+            </h3>
+
+            <ul className="grid grid-cols-2 gap-4 text-zinc-300 text-sm">
+              <li>• Panoramic mountain view</li>
+              <li>• Movie theater</li>
+              <li>• In-room fireplace</li>
+              <li>• Luxury minibar</li>
+              <li>• High-speed WiFi</li>
+              <li>• 24/7 concierge service</li>
+              <li>• Climate control</li>
+              <li>• Direct ski access</li>
+            </ul>
+          </div>
+
+          {/* Side Image */}
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1600566753051-2c3fbdc62c69"
+              alt="bathroom"
+              className="rounded-lg object-cover w-full h-[400px]"
+            />
+          </div>
+        </section>
+
+      </div>
+      <div className="rounded-xl border border-gray-200 bg-white shadow-sm dark:bg-zinc-900 dark:border-gray-800">
         <div className="grid items-center gap-6 p-6 md:grid-cols-2 md:p-8">
           {/* Content */}
           <div>
             <h1 className="text-3xl font-semibold text-gray-900 md:text-4xl dark:text-white">
-              Supun
+              Cinnamon City Hotel Booking
             </h1>
             <p className="mt-2 max-w-xl text-gray-600 dark:text-gray-300">
               Discover top-rated hotels, great locations, and the best
@@ -87,7 +191,7 @@ const Home = () => {
             </p>
             <form
               onSubmit={submitSearch}
-              className="mt-6 grid gap-2 rounded-lg border p-2 text-gray-800 shadow-sm sm:grid-cols-[1fr_1fr_auto] dark:bg-gray-900 dark:border-gray-700 dark:text-gray-100"
+              className="mt-6 grid gap-2 rounded-lg border p-2 text-gray-800 shadow-sm sm:grid-cols-[1fr_1fr_auto] dark:bg-zinc-900 dark:border-gray-700 dark:text-gray-100"
             >
               <input
                 value={q}
@@ -140,54 +244,10 @@ const Home = () => {
 
       {/* Benefits */}
       <div className="grid gap-4 sm:grid-cols-3">
-        {[
-          {
-            t: "Best prices",
-            d: "Transparent rates with no hidden fees.",
-            icon: (
-              <svg
-                viewBox="0 0 24 24"
-                className="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-              >
-                <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-              </svg>
-            ),
-          },
-          {
-            t: "Trusted reviews",
-            d: "Ratings from verified guests.",
-            icon: (
-              <svg
-                viewBox="0 0 24 24"
-                className="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-              >
-                <path d="M12 17l-5.5 3 1.5-6-4.5-4 6-.5L12 3l2.5 6 6 .5-4.5 4 1.5 6z" />
-              </svg>
-            ),
-          },
-          {
-            t: "24/7 support",
-            d: "We’ve got your back any time.",
-            icon: (
-              <svg
-                viewBox="0 0 24 24"
-                className="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-              >
-                <circle cx="12" cy="12" r="10" />
-                <path d="M12 6v6l4 2" />
-              </svg>
-            ),
-          },
-        ].map((it, i) => (
+        {BENEFITS.map((it, i) => (
           <div
             key={i}
-            className="rounded-lg border p-4 dark:bg-gray-900 dark:border-gray-800"
+            className="rounded-lg border p-4 dark:bg-zinc-900 dark:border-gray-800"
           >
             <div className="mb-2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-200">
               {it.icon}
@@ -227,7 +287,7 @@ const Home = () => {
       </div>
 
       {/* CTA */}
-      <div className="rounded-xl border p-6 text-center dark:bg-gray-900 dark:border-gray-800">
+      <div className="rounded-xl border p-6 text-center dark:bg-zinc-900 dark:border-gray-800">
         <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
           Ready to book your next trip?
         </h3>

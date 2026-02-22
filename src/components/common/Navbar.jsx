@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 import { useAuth } from "../../hooks/useAuth";
 import toast from "react-hot-toast";
@@ -93,7 +93,7 @@ export default function Navbar() {
   const [themeMenu, setThemeMenu] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-200/60 bg-white/80 backdrop-blur supports-backdrop-filter:bg-white/60 shadow-sm dark:bg-gray-900/80 dark:border-gray-800 supports-backdrop-filter:dark:bg-gray-900/60">
+    <header className="sticky top-0 z-50 border-b border-gray-200/60 bg-white/80 backdrop-blur supports-backdrop-filter:bg-white/60 shadow-sm dark:bg-zinc-900/80 dark:border-gray-800 supports-backdrop-filter:dark:bg-zinc-900/60">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -150,7 +150,7 @@ export default function Navbar() {
                 </span>
               </button>
               {themeMenu && (
-                <div className="absolute right-0 top-full mt-2 w-40 overflow-hidden rounded-md border border-gray-200 bg-white shadow-lg dark:bg-gray-900 dark:border-gray-800">
+                <div className="absolute right-0 top-full mt-2 w-40 overflow-hidden rounded-md border border-gray-200 bg-white shadow-lg dark:bg-zinc-900 dark:border-gray-800">
                   {["light", "dark"].map((t) => (
                     <button
                       key={t}
@@ -186,7 +186,7 @@ export default function Navbar() {
               <div className="hidden md:flex items-center gap-2">
                 <button
                   type="button"
-                  onClick={() => setModal("signin")}
+                  onClick={() => navigate("/login-user")}
                   className="btn btn-outline text-white dark:text-gray-300 hover:text-gray-300 dark:hover:text-white"
                 >
                   Sign In
@@ -209,7 +209,7 @@ export default function Navbar() {
                   </span>
                 </button>
                 {showProfile && (
-                  <div className="absolute right-0 top-full mt-2 w-56 overflow-hidden rounded-md border border-gray-200 bg-white shadow-lg transition-all dark:bg-gray-900 dark:border-gray-800">
+                  <div className="absolute right-0 top-full mt-2 w-56 overflow-hidden rounded-md border border-gray-200 bg-white shadow-lg transition-all dark:bg-zinc-900 dark:border-gray-800">
                     <div className="p-2">
                       {user.role === "admin" ? (
                         <Link

@@ -5,7 +5,7 @@ import { fileUrl } from '../../lib/api'
 const HotelCard = ({ hotel }) => {
   const [imgError, setImgError] = useState(false)
   return (
-    <div className="border rounded-md overflow-hidden bg-white shadow-sm dark:bg-gray-900 dark:border-gray-800">
+    <div className="border rounded-md overflow-hidden bg-white shadow-sm dark:bg-zinc-900 dark:border-gray-800">
       {hotel.images?.length && !imgError ? (
         <img src={fileUrl(hotel.images[0])} alt={hotel.name} className="h-40 w-full object-cover" onError={() => setImgError(true)} />
       ) : (

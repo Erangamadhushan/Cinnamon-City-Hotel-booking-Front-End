@@ -64,7 +64,7 @@ const Contact = () => {
       <div>
         <form
           onSubmit={onSubmit}
-          className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:bg-gray-900 dark:border-gray-800"
+          className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:bg-zinc-900 dark:border-gray-800"
         >
           <div className="mb-4">
             <label

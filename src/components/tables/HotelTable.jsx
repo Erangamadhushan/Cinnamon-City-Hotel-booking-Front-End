@@ -113,7 +113,7 @@ export default function HotelTable() {
       {modalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <div className="absolute inset-0 bg-black/40" onClick={() => setModalOpen(false)} />
-          <div className="relative w-full max-w-2xl rounded-lg border p-5 shadow bg-white dark:bg-gray-900 dark:border-gray-800">
+          <div className="relative w-full max-w-2xl rounded-lg border p-5 shadow bg-white dark:bg-zinc-900 dark:border-gray-800">
             <h4 className="text-base font-semibold text-gray-900 dark:text-white">{editing ? 'Edit Hotel' : 'Add Hotel'}</h4>
             <div className="mt-3 grid gap-4">
               {/* Basic info & location arranged for compact view */}
