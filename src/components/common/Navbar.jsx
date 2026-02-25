@@ -199,7 +199,7 @@ export default function Navbar() {
                 <button
                   type="button"
                   onClick={() => navigate("/login-user")}
-                  className="btn btn-outline text-white dark:text-gray-300 hover:text-gray-300 dark:hover:text-white"
+                  className="btn btn-outline text-white dark:text-gray-300 hover:text-gray-300 dark:hover:text-white cursor-pointer"
                 >
                   Sign In
                 </button>
@@ -268,7 +268,7 @@ export default function Navbar() {
             {/* Keep Book now CTA */}
             <Link
               to="/hotels"
-              className="hidden md:inline-flex btn btn-primary"
+              className="hidden md:inline-flex btn btn-primary items-center gap-2 p-2 bg-zinc-800 rounded text-white"
             >
               <IconCalendar size={16} />
               Book now
