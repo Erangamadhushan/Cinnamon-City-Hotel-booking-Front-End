@@ -81,7 +81,7 @@ export default function ReportChart() {
 
 function Stat({ label, value }) {
   return (
-    <div className="rounded-lg border p-4 dark:bg-gray-900 dark:border-gray-800">
+    <div className="rounded-lg border p-4 dark:bg-zinc-900 dark:border-gray-800">
       <div className="text-xs font-medium text-gray-500 dark:text-gray-400">{label}</div>
       <div className="mt-1 text-xl font-semibold text-gray-900 dark:text-white">{value}</div>
     </div>
@@ -90,7 +90,7 @@ function Stat({ label, value }) {
 
 function Card({ title, children }) {
   return (
-    <div className="rounded-lg border p-4 dark:bg-gray-900 dark:border-gray-800">
+    <div className="rounded-lg border p-4 dark:bg-zinc-900 dark:border-gray-800">
       <h4 className="text-base font-semibold text-gray-900 mb-3 dark:text-white">{title}</h4>
       {children}
     </div>

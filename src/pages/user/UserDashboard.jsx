@@ -33,7 +33,7 @@ const UserDashboard = () => {
   return (
     <section className="space-y-6">
       {/* Welcome banner */}
-      <div className="rounded-xl border p-5 bg-white shadow-sm dark:bg-gray-900 dark:border-gray-800">
+      <div className="rounded-xl border p-5 bg-white shadow-sm dark:bg-zinc-900 dark:border-gray-800">
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <div>
             <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
@@ -56,7 +56,7 @@ const UserDashboard = () => {
 
       {/* Quick stats & links */}
       <div className="grid gap-4 sm:grid-cols-3">
-        <div className="rounded-lg border p-4 dark:bg-gray-900 dark:border-gray-800">
+        <div className="rounded-lg border p-4 dark:bg-zinc-900 dark:border-gray-800">
           <p className="text-sm text-gray-600 dark:text-gray-300">Bookings</p>
           <p className="mt-1 text-2xl font-semibold text-gray-900 dark:text-white">
             {bookingCount ?? "—"}
@@ -68,7 +68,7 @@ const UserDashboard = () => {
             View my bookings
           </Link>
         </div>
-        <div className="rounded-lg border p-4 dark:bg-gray-900 dark:border-gray-800">
+        <div className="rounded-lg border p-4 dark:bg-zinc-900 dark:border-gray-800">
           <p className="text-sm text-gray-600 dark:text-gray-300">Explore</p>
           <p className="mt-1 text-2xl font-semibold text-gray-900 dark:text-white">
             Hotels
@@ -80,7 +80,7 @@ const UserDashboard = () => {
             Browse hotels
           </Link>
         </div>
-        <div className="rounded-lg border p-4 dark:bg-gray-900 dark:border-gray-800">
+        <div className="rounded-lg border p-4 dark:bg-zinc-900 dark:border-gray-800">
           <p className="text-sm text-gray-600 dark:text-gray-300">Need help?</p>
           <p className="mt-1 text-2xl font-semibold text-gray-900 dark:text-white">
             Support
@@ -95,7 +95,7 @@ const UserDashboard = () => {
       </div>
 
       {/* Suggested hotels */}
-      <div className="rounded-xl border p-5 dark:bg-gray-900 dark:border-gray-800">
+      <div className="rounded-xl border p-5 dark:bg-zinc-900 dark:border-gray-800">
         <div className="flex items-center justify-between">
           <h3 className="font-medium text-gray-900 dark:text-white">
             Suggested Hotels
@@ -120,7 +120,7 @@ const UserDashboard = () => {
             {hotels.slice(0, 4).map((h) => (
               <li
                 key={h._id}
-                className="rounded-md border p-3 dark:bg-gray-900/40 dark:border-gray-800"
+                className="rounded-md border p-3 dark:bg-zinc-900/40 dark:border-gray-800"
               >
                 <div className="flex items-center justify-between">
                   <div>

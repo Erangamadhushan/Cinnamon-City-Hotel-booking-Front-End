@@ -29,7 +29,7 @@ const App = () => {
     <div className="min-h-screen bg-white dark:bg-gray-950">
       <Navbar />
       <Toaster position="top-right" />
-      <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 text-gray-900 dark:text-gray-100">
+      <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 text-gray-900 dark:text-gray-100 flex-1">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />

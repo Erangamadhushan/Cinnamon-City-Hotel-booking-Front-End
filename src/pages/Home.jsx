@@ -1,7 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { api } from "../lib/api";
-import HotelCard from "../components/cards/HotelCard";
+import { BENEFITS } from "../data/benefit.data";
+
+// Home page with hero, info, about, facilities, featured hotels, and CTA sections
+import HeroSection from "../components/pages/home/HeroSection.jsx";
+import InfoBarSection from "../components/pages/home/InfoBarSection.jsx";
+import AboutSection from "../components/pages/home/AboutSection.jsx";
+import ArrangementSection from "../components/pages/home/ArrangementSection.jsx";
+import FacilitiesSection from "../components/pages/home/FacilitiesSection.jsx";
+import FeaturedSection from "../components/pages/home/FeaturedSection.jsx";
+import CTASection from "../components/pages/home/CTASection.jsx";
+
+import BenefitGrid from "../components/pages/home/grid/BenefitGrid.jsx";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -12,7 +23,7 @@ const Home = () => {
   const [error, setError] = useState("");
   // Hero image rotation (use images different from auth pages)
   const HERO_IMAGES = [
-    "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1600&auto=format&fit=crop", // city view (hotel skyline)
+    "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1600&auto=format&fit=crop",
   ];
   const [heroIdx, setHeroIdx] = useState(0);
 
@@ -74,12 +85,30 @@ const Home = () => {
 
   return (
     <section className="space-y-12">
-      <div className="rounded-xl border border-gray-200 bg-white shadow-sm dark:bg-gray-900 dark:border-gray-800">
+      <div className="bg-zinc-900 text-white min-h-screen">
+
+        {/* HERO SECTION */}
+        <HeroSection />
+
+        {/* INFO BAR */}
+        <InfoBarSection />
+
+        {/* ABOUT SECTION */}
+        <AboutSection />
+
+        {/* SLEEPING ARRANGEMENTS */}
+        <ArrangementSection />
+
+        {/* FACILITIES & IMAGE SECTION */}
+        <FacilitiesSection />
+
+      </div>
+      <div className="rounded-xl border border-gray-200 bg-white shadow-sm dark:bg-zinc-900 dark:border-gray-800">
         <div className="grid items-center gap-6 p-6 md:grid-cols-2 md:p-8">
           {/* Content */}
           <div>
             <h1 className="text-3xl font-semibold text-gray-900 md:text-4xl dark:text-white">
-              Supun
+              Cinnamon City Hotel Booking
             </h1>
             <p className="mt-2 max-w-xl text-gray-600 dark:text-gray-300">
               Discover top-rated hotels, great locations, and the best
@@ -87,7 +116,7 @@ const Home = () => {
             </p>
             <form
               onSubmit={submitSearch}
-              className="mt-6 grid gap-2 rounded-lg border p-2 text-gray-800 shadow-sm sm:grid-cols-[1fr_1fr_auto] dark:bg-gray-900 dark:border-gray-700 dark:text-gray-100"
+              className="mt-6 grid gap-2 rounded-lg border p-2 text-gray-800 shadow-sm sm:grid-cols-[1fr_1fr_auto] dark:bg-zinc-900 dark:border-gray-700 dark:text-gray-100"
             >
               <input
                 value={q}
@@ -140,104 +169,16 @@ const Home = () => {
 
       {/* Benefits */}
       <div className="grid gap-4 sm:grid-cols-3">
-        {[
-          {
-            t: "Best prices",
-            d: "Transparent rates with no hidden fees.",
-            icon: (
-              <svg
-                viewBox="0 0 24 24"
-                className="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-              >
-                <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-              </svg>
-            ),
-          },
-          {
-            t: "Trusted reviews",
-            d: "Ratings from verified guests.",
-            icon: (
-              <svg
-                viewBox="0 0 24 24"
-                className="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-              >
-                <path d="M12 17l-5.5 3 1.5-6-4.5-4 6-.5L12 3l2.5 6 6 .5-4.5 4 1.5 6z" />
-              </svg>
-            ),
-          },
-          {
-            t: "24/7 support",
-            d: "We’ve got your back any time.",
-            icon: (
-              <svg
-                viewBox="0 0 24 24"
-                className="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-              >
-                <circle cx="12" cy="12" r="10" />
-                <path d="M12 6v6l4 2" />
-              </svg>
-            ),
-          },
-        ].map((it, i) => (
-          <div
-            key={i}
-            className="rounded-lg border p-4 dark:bg-gray-900 dark:border-gray-800"
-          >
-            <div className="mb-2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-200">
-              {it.icon}
-            </div>
-            <h3 className="font-medium text-gray-900 dark:text-white">
-              {it.t}
-            </h3>
-            <p className="text-sm text-gray-600 dark:text-gray-300">{it.d}</p>
-          </div>
+        {BENEFITS.map((it, i) => (
+          <BenefitGrid key={i} it={it} i={i} />
         ))}
       </div>
 
       {/* Featured */}
-      <div>
-        <div className="flex items-center justify-between">
-          <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
-            Top picks for you
-          </h2>
-          <Link
-            to="/hotels"
-            className="text-indigo-600 hover:underline dark:text-indigo-400"
-          >
-            View all
-          </Link>
-        </div>
-        {error && <p className="mt-3 text-red-600">{error}</p>}
-        <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {featured.map((h) => (
-            <HotelCard key={h._id} hotel={h} />
-          ))}
-          {!loading && featured.length === 0 && !error && (
-            <p className="text-gray-600 dark:text-gray-300">
-              No featured hotels yet. Check all hotels instead.
-            </p>
-          )}
-        </div>
-      </div>
+      <FeaturedSection featured={featured} error={error} loading={loading} />
 
       {/* CTA */}
-      <div className="rounded-xl border p-6 text-center dark:bg-gray-900 dark:border-gray-800">
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-          Ready to book your next trip?
-        </h3>
-        <p className="mt-1 text-gray-600 dark:text-gray-300">
-          Find exclusive deals across our curated collection.
-        </p>
-        <Link to="/hotels" className="mt-3 inline-block btn btn-primary">
-          Explore Hotels
-        </Link>
-      </div>
+      <CTASection />
     </section>
   );
 };

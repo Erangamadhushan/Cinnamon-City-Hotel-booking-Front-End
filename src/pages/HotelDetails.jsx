@@ -63,7 +63,6 @@ const HotelDetails = () => {
 
   return (
     <section className="mx-auto max-w-6xl">
-      {/* Title + meta header */}
       <div className="mb-4">
         <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">
           {hotel.name}
@@ -109,7 +108,7 @@ const HotelDetails = () => {
                     <button
                       type="button"
                       aria-label="Previous image"
-                      className="rounded-full bg-white/80 px-2 py-1 shadow hover:bg-white dark:bg-gray-900/60 dark:hover:bg-gray-900/80"
+                      className="rounded-full bg-white/80 px-2 py-1 shadow hover:bg-white dark:bg-zinc-900/60 dark:hover:bg-zinc-900/80"
                       onClick={() =>
                         setMainIdx((i) =>
                           i > 0 ? i - 1 : hotel.images.length - 1,
@@ -123,7 +122,7 @@ const HotelDetails = () => {
                     <button
                       type="button"
                       aria-label="Next image"
-                      className="rounded-full bg-white/80 px-2 py-1 shadow hover:bg-white dark:bg-gray-900/60 dark:hover:bg-gray-900/80"
+                      className="rounded-full bg-white/80 px-2 py-1 shadow hover:bg-white dark:bg-zinc-900/60 dark:hover:bg-zinc-900/80"
                       onClick={() =>
                         setMainIdx((i) => (i + 1) % hotel.images.length)
                       }
@@ -166,7 +165,7 @@ const HotelDetails = () => {
 
       {/* Details */}
       <div className="mt-6 grid gap-6 md:grid-cols-2">
-        <div className="rounded-md border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-900">
+        <div className="rounded-md border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-zinc-900">
           <h3 className="text-base font-medium text-gray-900 dark:text-gray-100">
             About
           </h3>
@@ -181,7 +180,7 @@ const HotelDetails = () => {
             </p>
           )}
         </div>
-        <div className="rounded-md border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-900">
+        <div className="rounded-md border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-zinc-900">
           <h3 className="text-base font-medium text-gray-900 dark:text-gray-100">
             Amenities
           </h3>
@@ -207,7 +206,7 @@ const HotelDetails = () => {
       {/* Booking strip moved to bottom */}
       <div
         ref={formRef}
-        className="mt-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-900"
+        className="mt-6 rounded-md border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-zinc-900"
       >
         <h4 className="text-sm font-medium text-gray-900 dark:text-gray-100">
           Book your stay

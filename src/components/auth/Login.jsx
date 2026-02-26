@@ -63,19 +63,19 @@ const Login = ({ onSwitchToSignUp, requiredRole }) => {
       <div className="flex items-center justify-center py-10 px-6">
         <form
           onSubmit={onSubmit}
-          className="w-full max-w-md rounded-xl bg-white shadow-lg p-6 dark:bg-gray-900 dark:text-gray-100 dark:border dark:border-gray-800 dark:shadow-none"
+          className="w-full max-w-md rounded-xl bg-white shadow-lg p-6 dark:bg-zinc-900 dark:text-gray-100 dark:border dark:border-gray-800 dark:shadow-none"
         >
           {/* Role tabs */}
           <div className="mb-6 flex rounded-md bg-gray-100 p-1 text-sm font-medium dark:bg-gray-800 dark:border dark:border-gray-700">
             <Link
               to="/login-user"
-              className={`flex-1 text-center rounded-md py-2 ${requiredRole !== "admin" ? "bg-white shadow text-gray-900 dark:bg-gray-900 dark:text-gray-100 dark:shadow-none dark:border dark:border-gray-700" : "text-gray-600 dark:text-gray-300"}`}
+              className={`flex-1 text-center rounded-md py-2 ${requiredRole !== "admin" ? "bg-white shadow text-gray-900 dark:bg-zinc-900 dark:text-gray-100 dark:shadow-none dark:border dark:border-gray-700" : "text-gray-600 dark:text-gray-300"}`}
             >
               Customer
             </Link>
             <Link
               to="/login-admin"
-              className={`flex-1 text-center rounded-md py-2 ${requiredRole === "admin" ? "bg-white shadow text-gray-900 dark:bg-gray-900 dark:text-gray-100 dark:shadow-none dark:border dark:border-gray-700" : "text-gray-600 dark:text-gray-300"}`}
+              className={`flex-1 text-center rounded-md py-2 ${requiredRole === "admin" ? "bg-white shadow text-gray-900 dark:bg-zinc-900 dark:text-gray-100 dark:shadow-none dark:border dark:border-gray-700" : "text-gray-600 dark:text-gray-300"}`}
             >
               Admin
             </Link>

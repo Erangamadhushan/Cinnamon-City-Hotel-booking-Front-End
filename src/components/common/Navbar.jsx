@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Facebook, Twitter, Instagram } from "lucide-react";
 
 import { useAuth } from "../../hooks/useAuth";
 import toast from "react-hot-toast";
@@ -93,7 +94,7 @@ export default function Navbar() {
   const [themeMenu, setThemeMenu] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-200/60 bg-white/80 backdrop-blur supports-backdrop-filter:bg-white/60 shadow-sm dark:bg-gray-900/80 dark:border-gray-800 supports-backdrop-filter:dark:bg-gray-900/60">
+    <header className="sticky top-0 z-50 border-b border-gray-200/60 bg-white/80 backdrop-blur supports-backdrop-filter:bg-white/60 shadow-sm dark:bg-zinc-900/80 dark:border-gray-800 supports-backdrop-filter:dark:bg-zinc-900/60">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -120,7 +121,18 @@ export default function Navbar() {
               </Link>
             ))}
           </nav>
-
+          <div className="flex items-center gap-4">
+            { /* social media links  */}
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">
+              <Facebook />
+            </a>
+            <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">
+              <Twitter />
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">
+              <Instagram />
+            </a>
+          </div>
           <div className="flex items-center gap-2">
             <a
               href="tel:+10000000000"
@@ -150,7 +162,7 @@ export default function Navbar() {
                 </span>
               </button>
               {themeMenu && (
-                <div className="absolute right-0 top-full mt-2 w-40 overflow-hidden rounded-md border border-gray-200 bg-white shadow-lg dark:bg-gray-900 dark:border-gray-800">
+                <div className="absolute right-0 top-full mt-2 w-40 overflow-hidden rounded-md border border-gray-200 bg-white shadow-lg dark:bg-zinc-900 dark:border-gray-800">
                   {["light", "dark"].map((t) => (
                     <button
                       key={t}
@@ -186,8 +198,8 @@ export default function Navbar() {
               <div className="hidden md:flex items-center gap-2">
                 <button
                   type="button"
-                  onClick={() => setModal("signin")}
-                  className="btn btn-outline text-white dark:text-gray-300 hover:text-gray-300 dark:hover:text-white"
+                  onClick={() => navigate("/login-user")}
+                  className="btn btn-outline text-white dark:text-gray-300 hover:text-gray-300 dark:hover:text-white cursor-pointer"
                 >
                   Sign In
                 </button>
@@ -209,7 +221,7 @@ export default function Navbar() {
                   </span>
                 </button>
                 {showProfile && (
-                  <div className="absolute right-0 top-full mt-2 w-56 overflow-hidden rounded-md border border-gray-200 bg-white shadow-lg transition-all dark:bg-gray-900 dark:border-gray-800">
+                  <div className="absolute right-0 top-full mt-2 w-56 overflow-hidden rounded-md border border-gray-200 bg-white shadow-lg transition-all dark:bg-zinc-900 dark:border-gray-800">
                     <div className="p-2">
                       {user.role === "admin" ? (
                         <Link
@@ -256,7 +268,7 @@ export default function Navbar() {
             {/* Keep Book now CTA */}
             <Link
               to="/hotels"
-              className="hidden md:inline-flex btn btn-primary"
+              className="hidden md:inline-flex btn btn-primary items-center gap-2 p-2 bg-zinc-800 rounded text-white"
             >
               <IconCalendar size={16} />
               Book now

@@ -21,7 +21,7 @@ const IconBed = ({ size = 18, className = "" }) => (
 
 const Footer = () => {
   return (
-    <footer className="border-t border-gray-200/70 bg-white/80 dark:bg-gray-900/80 dark:border-gray-800">
+    <footer className="border-t border-gray-200/70 bg-white/80 dark:bg-zinc-900/80 dark:border-gray-800">
       {/* Mobile: centered minimal footer */}
       <div className="md:hidden mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 text-center">
         <Link
