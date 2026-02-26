@@ -63,7 +63,6 @@ const HotelDetails = () => {
 
   return (
     <section className="mx-auto max-w-6xl">
-      {/* Title + meta header */}
       <div className="mb-4">
         <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">
           {hotel.name}

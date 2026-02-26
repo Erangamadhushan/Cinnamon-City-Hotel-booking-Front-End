@@ -10,7 +10,7 @@ const HotelsList = () => {
   const [city, setCity] = useState(params.get("city") || "");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [sort, setSort] = useState(params.get("sort") || "relevance"); // relevance | name | rating_desc | rating_asc
+  const [sort, setSort] = useState(params.get("sort") || "relevance");
   const [minRating, setMinRating] = useState(
     Number(params.get("minRating") || 0),
   );

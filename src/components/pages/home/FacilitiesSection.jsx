@@ -20,7 +20,7 @@ export default function FacilitiesSection() {
 
             <div>
                 <img
-                    src="https://images.unsplash.com/photo-1600566753051-2c3fbdc62c69"
+                    src="feature-section.jpg"
                     alt="bathroom"
                     className="rounded-lg object-cover w-full h-[400px]"
                 />
